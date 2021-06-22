@@ -2,8 +2,6 @@ package com.example.android_app_remote_joystick.view_model;
 
 import com.example.android_app_remote_joystick.model.FgPlayer;
 
-import java.io.IOException;
-
 public class ViewModel {
     FgPlayer model;
 
@@ -21,11 +19,21 @@ public class ViewModel {
         model.connectToFg();
     }
 
-    void setAileron(int val){
-
+    public void setRudder(int rudder){
+        model.rudder = rudder;
+        model.sendNewRudder();
     }
 
-    void setElevator(int val){
+    public void setThrottle(int throttle){
+        model.throttle = throttle;
+        model.sendNewThrottle();
+    }
 
+    void setAileron(int aileron){
+        model.aileron = aileron;
+    }
+
+    void setElevator(int elevator){
+        model.elevator = elevator;
     }
 }
