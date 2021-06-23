@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 public class FgPlayer {
     public String strIP;
     public String strPort;
-    private ExecutorService executor;
+    public ExecutorService executor;
     Socket fg;
     PrintWriter out;
     public double rudder;
@@ -38,7 +38,7 @@ public class FgPlayer {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                double newRudder = rudder * 1/100;
+                double newRudder = rudder * 1/100 - 1;
                 out.print("set /controls/flight/rudder " + newRudder +"\r\n");
                 out.flush();
             }
@@ -62,7 +62,7 @@ public class FgPlayer {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                double newAileron = 1/200 * aileron ;
+                double newAileron = aileron ;
                 out.print("set /controls/flight/aileron " + newAileron +"\r\n");
                 out.flush();
             }
@@ -74,13 +74,11 @@ public class FgPlayer {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                double newElevator = elevator ;
+                double newElevator = -elevator ;
                 out.print("set /controls/flight/elevator " + newElevator +"\r\n");
                 out.flush();
             }
         });
     }
-
-
 }
 

@@ -16,30 +16,45 @@ public class ViewModel {
 
     public void setPort(String port){
         model.strPort = port;
-        model.connectToFg();
+        if (model.executor == null){
+            model.connectToFg();
+
+        }
     }
 
     public void setRudder(int rudder){
         model.rudder = rudder;
-        model.connectToFg();
+        if (model.executor == null){
+            model.connectToFg();
+
+        }
         model.sendNewRudder();
     }
 
     public void setThrottle(int throttle){
         model.throttle = throttle;
-        model.connectToFg();
+        if (model.executor == null){
+            model.connectToFg();
+
+        }
         model.sendNewThrottle();
     }
 
     public void setAileron(double aileron){
         model.aileron = aileron;
-        model.connectToFg();
+        if (model.executor == null){
+            model.connectToFg();
+
+        }
         model.sendNewAileron();
     }
 
     public void setElevator(double elevator){
         model.elevator = elevator;
-        model.connectToFg();
+        if (model.executor == null){
+            model.connectToFg();
+
+        }
         model.sendNewElevator();
     }
 }

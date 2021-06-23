@@ -3,7 +3,6 @@ package com.example.android_app_remote_joystick.view;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -14,7 +13,7 @@ import com.example.android_app_remote_joystick.model.FgPlayer;
 import com.example.android_app_remote_joystick.view_model.ViewModel;
 
 
-public class MainActivity extends AppCompatActivity implements Joystick.JoystickListener {
+public class MainActivity<id> extends AppCompatActivity implements Joystick.JoystickListener {
     ActivityMainBinding binding;
     ViewModel viewModel = new ViewModel(new FgPlayer());
 
@@ -88,4 +87,5 @@ public class MainActivity extends AppCompatActivity implements Joystick.Joystick
         viewModel.setAileron(xPercent);
         viewModel.setElevator(yPercent);
     }
+
 }

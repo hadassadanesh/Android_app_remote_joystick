@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/background">
+        android:background="@drawable/sky">
 
         <TextView
                 android:layout_width="50dp"
@@ -79,8 +79,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:id="@+id/constraintLayout"
-            android:layout_width="398dp"
-            android:layout_height="434dp"
+            android:layout_width="392dp"
+            android:layout_height="499dp"
             android:layout_marginTop="306dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -96,6 +96,8 @@
                 android:layout_marginTop="304dp"
                 android:max="200"
                 android:progress="100"
+                android:theme="@style/seekBarColor"
+                android:thumbTint="@color/purple_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -109,6 +111,8 @@
                 android:max="200"
                 android:rotation="90"
                 android:scrollY="-90dp"
+                android:theme="@style/seekBarColor"
+                android:thumbTint="@color/purple_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.398"
                 app:layout_constraintStart_toStartOf="parent"
@@ -126,5 +130,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
