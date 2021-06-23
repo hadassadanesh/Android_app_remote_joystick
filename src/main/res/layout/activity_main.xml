@@ -13,103 +13,90 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/background">
 
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="88dp"
-            android:text="IP:"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="80dp"
+                android:text="IP:"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="163dp"
-            android:text="Port:"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="156dp"
+                android:text="Port:"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="200dp"
-            android:layout_height="59dp"
-            android:layout_marginTop="230dp"
-            android:text="Connect"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="224dp"
+                android:text="Connect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.434"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
 
-        <EditText
-            android:id="@+id/textOfIP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Enter IP"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/textOfIP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="64dp"
+                android:ems="10"
+                android:hint="Enter IP"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/textOfPort"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="163dp"
-            android:ems="10"
-            android:hint="Enter Port"
+            <EditText
+                android:id="@+id/textOfPort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="148dp"
+                android:layout_marginEnd="64dp"
+                android:ems="10"
 
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <FrameLayout
-            android:id="@+id/joystick"
-            android:layout_width="171dp"
-            android:layout_height="160dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="408dp"
-            android:layout_marginEnd="30dp"
-            android:gravity="center"
-            android:background="@drawable/circle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintTop_toTopOf="parent">
-        </FrameLayout>
+                android:hint="Enter Port"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:id="@+id/constraintLayout"
-            android:layout_width="394dp"
-            android:layout_height="805dp"
+            android:layout_width="398dp"
+            android:layout_height="434dp"
+            android:layout_marginTop="306dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/joystick"
+            app:layout_constraintStart_toEndOf="@+id/textOfPort"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="1dp">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
 
             <SeekBar
                 android:id="@+id/seekBar1"
                 android:layout_width="200dp"
                 android:layout_height="31dp"
-                android:layout_marginTop="588dp"
+                android:layout_marginTop="304dp"
                 android:max="200"
                 android:progress="100"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,17 +104,27 @@
                 android:id="@+id/seekBar2"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_marginTop="376dp"
+                android:layout_marginTop="88dp"
                 android:clickable="false"
                 android:max="200"
                 android:rotation="90"
                 android:scrollY="-90dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.314"
+                app:layout_constraintHorizontal_bias="0.398"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <com.example.android_app_remote_joystick.view.Joystick
+                android:id="@+id/joystick"
+                android:layout_width="215dp"
+                android:layout_height="193dp"
+                android:layout_marginTop="92dp"
+                android:layout_marginEnd="64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

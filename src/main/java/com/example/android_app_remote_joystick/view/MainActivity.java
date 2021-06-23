@@ -3,8 +3,10 @@ package com.example.android_app_remote_joystick.view;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import com.example.android_app_remote_joystick.R;
 import com.example.android_app_remote_joystick.databinding.ActivityMainBinding;
@@ -12,18 +14,21 @@ import com.example.android_app_remote_joystick.model.FgPlayer;
 import com.example.android_app_remote_joystick.view_model.ViewModel;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Joystick.JoystickListener {
     ActivityMainBinding binding;
     ViewModel viewModel = new ViewModel(new FgPlayer());
-    private Joystick joystick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //setContentView(joystick);
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         binding.button.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
@@ -34,25 +39,10 @@ public class MainActivity extends AppCompatActivity {
                     viewModel.setIp(strIP);
                     viewModel.setPort(strPort);
 
+                } else {
+                    Toast.makeText(getApplicationContext(), "IP or Port is missing",
+                            Toast.LENGTH_SHORT).show();
                 }
-//                else{
-//                    Toast.makeText(getApplicationContext(), "IP or Port is missing",
-//                            Toast.LENGTH_SHORT).show();
-//                }
-            }
-        });
-
-
-        binding.joystick.setOnClickListener(new View.OnClickListener() {
-            
-            @Override
-            public void onClick(View v) {
-                System.out.println("joystick");
-
-//                else{
-//                    Toast.makeText(getApplicationContext(), "IP or Port is missing",
-//                            Toast.LENGTH_SHORT).show();
-//                }
             }
         });
 
@@ -91,5 +81,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void OnJoystickMoved(float xPercent, float yPercent, int id) {
+        viewModel.setAileron(xPercent);
+        viewModel.setElevator(yPercent);
     }
 }

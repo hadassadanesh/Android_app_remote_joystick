@@ -14,8 +14,6 @@ public class FgPlayer {
     PrintWriter out;
     public double rudder;
     public double throttle;
-    public double centerX;
-    public double centerY;
     public double aileron;
     public double elevator;
 
@@ -40,7 +38,7 @@ public class FgPlayer {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                double newRudder = rudder * 1/100 - 1;
+                double newRudder = rudder * 1/100;
                 out.print("set /controls/flight/rudder " + newRudder +"\r\n");
                 out.flush();
             }
@@ -64,7 +62,7 @@ public class FgPlayer {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                double newAileron = aileron * 1/200;
+                double newAileron = 1/200 * aileron ;
                 out.print("set /controls/flight/aileron " + newAileron +"\r\n");
                 out.flush();
             }
@@ -76,8 +74,8 @@ public class FgPlayer {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                double newElevator = elevator * 1/200;
-                out.print("set /controls/flight/elevator " + elevator +"\r\n");
+                double newElevator = elevator ;
+                out.print("set /controls/flight/elevator " + newElevator +"\r\n");
                 out.flush();
             }
         });

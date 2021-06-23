@@ -21,19 +21,25 @@ public class ViewModel {
 
     public void setRudder(int rudder){
         model.rudder = rudder;
+        model.connectToFg();
         model.sendNewRudder();
     }
 
     public void setThrottle(int throttle){
         model.throttle = throttle;
+        model.connectToFg();
         model.sendNewThrottle();
     }
 
-    void setAileron(int aileron){
+    public void setAileron(double aileron){
         model.aileron = aileron;
+        model.connectToFg();
+        model.sendNewAileron();
     }
 
-    void setElevator(int elevator){
+    public void setElevator(double elevator){
         model.elevator = elevator;
+        model.connectToFg();
+        model.sendNewElevator();
     }
 }
