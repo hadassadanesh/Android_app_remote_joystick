@@ -13,7 +13,7 @@ The communication protocol- once the flight simulator, at the server side, get s
 
 # The structure of the folders and the main files of the project
 For programming this app, MVVM architecture has been used.
-This App has three main parts that run it, each part with its own designated responsibilities- **V**iew, **V**iew**M**odel and **M**odel. 
+This App has three main parts that run it, each part with its own designated responsibilities- **M**odelת **V**iew and **V**iew**M**odel . 
 
 The **V**iew bound by data-binding to the **V**iew-**M**odel, which will give commands to the **M**odel which will communicate with the flight simulator.
 
