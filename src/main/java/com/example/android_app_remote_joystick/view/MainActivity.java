@@ -21,9 +21,6 @@ public class MainActivity<id> extends AppCompatActivity implements Joystick.Joys
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //setContentView(joystick);
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         binding.button.setOnClickListener(new View.OnClickListener() {
@@ -83,9 +80,9 @@ public class MainActivity<id> extends AppCompatActivity implements Joystick.Joys
     }
 
     @Override
-    public void OnJoystickMoved(float xPercent, float yPercent, int id) {
-        viewModel.setAileron(xPercent);
-        viewModel.setElevator(yPercent);
+    public void OnMoveJoystick(float aileron, float elevator) {
+        viewModel.setAileron(aileron);
+        viewModel.setElevator(elevator);
     }
 
 }

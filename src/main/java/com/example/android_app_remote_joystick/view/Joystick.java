@@ -14,14 +14,13 @@ import androidx.annotation.NonNull;
 
 import com.example.android_app_remote_joystick.R;
 
-public class Joystick extends SurfaceView implements SurfaceHolder.Callback, View.OnTouchListener {
+public class Joystick extends SurfaceView implements View.OnTouchListener, SurfaceHolder.Callback {
 
     private float xOfCenter;
     private float yOfCenter;
     private float bigRadius;
     private float littleRadius;
     private  JoystickListener joystickListener;
-    // private final int ratio = 5;
 
     public Joystick(Context context) {
 
@@ -53,6 +52,9 @@ public class Joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
         }
     }
 
+    public interface JoystickListener {
+        void OnMoveJoystick(float aileron, float elevator);
+    }
 
     private void drawJoystick(float x, float y){
         if(getHolder().getSurface().isValid()){
@@ -69,7 +71,12 @@ public class Joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
 
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder holder) {
-        setupDimensions();
+
+        littleRadius = Math.min(getWidth(), getHeight()) / 4;  //5
+        bigRadius = Math.min(getWidth(), getHeight()) / 2; //3
+        xOfCenter = getWidth() /2 ;
+        yOfCenter = getHeight() / 2;
+
         drawJoystick(xOfCenter, yOfCenter);
     }
 
@@ -83,42 +90,33 @@ public class Joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
 
     }
 
-    public void setupDimensions(){
-        xOfCenter = getWidth() /2 ;
-        yOfCenter = getHeight() / 2;
-        bigRadius = Math.min(getWidth(), getHeight()) / 2; //3
-        littleRadius = Math.min(getWidth(), getHeight()) / 4;  //5
-    }
-
     public boolean onTouch(View v, MotionEvent e){
         if(v.equals(this)){
-            if(e.getAction() != e.ACTION_UP){
-                float displacement = (float) Math.sqrt((Math.pow((e.getX() - xOfCenter), 2))
+            if(e.getAction() == e.ACTION_UP){
+                drawJoystick(xOfCenter, yOfCenter);
+                joystickListener.OnMoveJoystick(0,0);
+            }
+            else{
+                float distance = (float) Math.sqrt((Math.pow((e.getX() - xOfCenter), 2))
                         + Math.pow(e.getY() - yOfCenter, 2));
-                if(displacement < bigRadius){
-                    drawJoystick(e.getX(), e.getY());
-                    joystickListener.OnJoystickMoved((e.getX() - xOfCenter) / bigRadius,
-                            (e.getY() - yOfCenter) / bigRadius, getId());
+                if(distance >= bigRadius){
 
-                }
-                else{
-                    float ratio = bigRadius / displacement;
+                    float ratio = bigRadius / distance;
                     float constrainedX = xOfCenter + (e.getX() - xOfCenter) * ratio;
                     float constrainedY = yOfCenter + (e.getY() - yOfCenter) * ratio;
                     drawJoystick(constrainedX, constrainedY);
-                    joystickListener.OnJoystickMoved((constrainedX - xOfCenter) / bigRadius,
-                            (constrainedY - yOfCenter) / bigRadius, getId());
+                    joystickListener.OnMoveJoystick((constrainedX - xOfCenter) / bigRadius,
+                            (constrainedY - yOfCenter) / bigRadius);
+
                 }
-            }
-            else{
-                drawJoystick(xOfCenter, yOfCenter);
-                joystickListener.OnJoystickMoved(0,0, getId());
+                else{
+
+                    drawJoystick(e.getX(), e.getY());
+                    joystickListener.OnMoveJoystick((e.getX() - xOfCenter) / bigRadius,
+                            (e.getY() - yOfCenter) / bigRadius);
+                }
             }
         }
         return true;
-    }
-
-    public interface JoystickListener {
-        void OnJoystickMoved(float xPercent, float yPercent, int id);
     }
 }
