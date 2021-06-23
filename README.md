@@ -28,7 +28,7 @@ Before connecting, run the FlightGear Launcher and go to Additional Settings and
 
 After opening the app, the user needs to enter IP and PORT and then, needs to press connect button.
 
-![image](http://url/to/app.jpeg) 
+![image](https://github.com/hadassadanesh/Android_app_remote_joystick/blob/dbc441751490a4f71b300ab0758ab0b720fc3524/app.jpeg)
 
 # UML Chart
 Press here to get the UML
