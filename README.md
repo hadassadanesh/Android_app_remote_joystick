@@ -23,6 +23,12 @@ The **V**iew bound by data-binding to the **V**iew-**M**odel, which will give co
 
 # Running
 
+Before connecting, run the FlightGear Launcher and go to Additional Settings and write:
+--telnet=socket,in,10,127.0.0.1,6400,tcp
+
+After opening the app, the user needs to enter IP and PORT and then, needs to press connect button.
+
+
 
 # UML Chart
 Press here to get the UML
