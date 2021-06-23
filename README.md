@@ -3,7 +3,7 @@
 # Brief explanation of the project
 At this program we developed android application with MVVM architecture. 
 This application constitutes remote control for Joystick in flight simulator.
-The communication protocol- once the flight simulator, at it is server side, get strings with instructions from the client, as a reaction it move the airplane in the flight simulator.
+The communication protocol- once the flight simulator, at the server side, get strings with instructions from the client, it moves the airplane in the flight simulator as a reaction.
 
 
 # Added Features
