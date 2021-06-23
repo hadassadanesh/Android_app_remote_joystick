@@ -7,7 +7,7 @@ The communication protocol- once the flight simulator, at the server side, get s
 
 
 # Added Features
-* **Buttom** Connect: After entering the IP and the PORT, connect button will connect the application to the flight gear.
+* **Button** Connect: After entering the IP and the PORT, connect button will connect the application to the flight gear.
 * **SeekBars**: There are two seek bars, through them the user can control the throttle and the rudder in the simulator. 
 * **Joystick**: By moving the joystick, who has a circle shape, the user can control the aileron and the elevator in the simulator.
 
