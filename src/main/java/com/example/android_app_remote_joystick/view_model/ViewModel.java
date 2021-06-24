@@ -35,7 +35,6 @@ public class ViewModel {
         model.throttle = throttle;
         if (model.executor == null){
             model.connectToFg();
-
         }
         model.sendNewThrottle();
     }

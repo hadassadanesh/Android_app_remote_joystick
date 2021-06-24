@@ -13,7 +13,7 @@ import com.example.android_app_remote_joystick.model.FgPlayer;
 import com.example.android_app_remote_joystick.view_model.ViewModel;
 
 
-public class MainActivity<id> extends AppCompatActivity implements Joystick.JoystickListener {
+public class MainActivity extends AppCompatActivity implements Joystick.JoystickMoved {
     ActivityMainBinding binding;
     ViewModel viewModel = new ViewModel(new FgPlayer());
 

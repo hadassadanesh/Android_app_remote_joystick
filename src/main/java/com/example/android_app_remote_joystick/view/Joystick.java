@@ -20,15 +20,15 @@ public class Joystick extends SurfaceView implements View.OnTouchListener, Surfa
     private float yOfCenter;
     private float bigRadius;
     private float littleRadius;
-    private  JoystickListener joystickListener;
+    private JoystickMoved joystickListener;
 
     public Joystick(Context context) {
 
         super(context);
         getHolder().addCallback(this);
         setOnTouchListener(this);
-        if (context instanceof JoystickListener) {
-            joystickListener = (JoystickListener) context;
+        if (context instanceof JoystickMoved) {
+            joystickListener = (JoystickMoved) context;
         }
     }
 
@@ -37,8 +37,8 @@ public class Joystick extends SurfaceView implements View.OnTouchListener, Surfa
         super(context, attributes,style);
         getHolder().addCallback(this);
         setOnTouchListener(this);
-        if (context instanceof JoystickListener) {
-            joystickListener = (JoystickListener) context;
+        if (context instanceof JoystickMoved) {
+            joystickListener = (JoystickMoved) context;
         }
     }
 
@@ -47,12 +47,12 @@ public class Joystick extends SurfaceView implements View.OnTouchListener, Surfa
         super(context, attributes);
         getHolder().addCallback(this);
         setOnTouchListener(this);
-        if (context instanceof JoystickListener) {
-            joystickListener = (JoystickListener) context;
+        if (context instanceof JoystickMoved) {
+            joystickListener = (JoystickMoved) context;
         }
     }
 
-    public interface JoystickListener {
+    public interface JoystickMoved {
         void OnMoveJoystick(float aileron, float elevator);
     }
 
