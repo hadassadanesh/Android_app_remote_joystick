@@ -1,7 +1,7 @@
 # Android_app_remote_joystick
 
 # Brief explanation of the project
-At this program we developed android application with MVVM architecture. 
+At this project we developed android application with MVVM architecture. 
 This application constitutes remote control for Joystick in flight simulator.
 The communication protocol- once the flight simulator, at the server side, get strings with instructions from the client, it moves the airplane in the flight simulator as a reaction.
 
@@ -31,7 +31,7 @@ After opening the app, the user needs to enter IP and PORT and then, needs to pr
 ![image](https://github.com/hadassadanesh/Android_app_remote_joystick/blob/dbc441751490a4f71b300ab0758ab0b720fc3524/app.jpeg)
 
 # UML Chart
-Press here(https://github.com/hadassadanesh/Android_app_remote_joystick/blob/main/uml.pdf) to get the UML
+Press [here](https://github.com/hadassadanesh/Android_app_remote_joystick/blob/main/uml.pdf) to get the UML
 
 # Explanation video
 Press here to watch our video examples.
