@@ -31,7 +31,7 @@ After opening the app, the user needs to enter IP and PORT and then, needs to pr
 ![image](https://github.com/hadassadanesh/Android_app_remote_joystick/blob/dbc441751490a4f71b300ab0758ab0b720fc3524/app.jpeg)
 
 # UML Chart
-Press [here](https://github.com/hadassadanesh/Android_app_remote_joystick/blob/main/uml.pdf) to get the UML
+Press [here](https://github.com/hadassadanesh/Android_app_remote_joystick/blob/main/umlDiagram.pdf) to get the UML
 
 # Explanation video
 Press here to watch our video examples.
