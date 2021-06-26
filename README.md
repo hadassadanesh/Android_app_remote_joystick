@@ -34,7 +34,7 @@ After opening the app, the user needs to enter IP and PORT and then, needs to pr
 Press [here](https://github.com/hadassadanesh/Android_app_remote_joystick/blob/main/umlDiagram.pdf) to get the UML
 
 # Explanation video
-Press here to watch our video examples.
+Press [here](https://www.youtube.com/watch?v=rjo8YoDsM6M) to watch our video examples.
 
 # Collaborators
 This program was developed by Hadassa Danesh and Noam Sery Levi.
