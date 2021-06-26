@@ -79,11 +79,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:id="@+id/constraintLayout"
-            android:layout_width="392dp"
-            android:layout_height="499dp"
-            android:layout_marginTop="306dp"
+            android:layout_width="406dp"
+            android:layout_height="439dp"
+            android:layout_marginTop="244dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.992"
             app:layout_constraintStart_toEndOf="@+id/textOfPort"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

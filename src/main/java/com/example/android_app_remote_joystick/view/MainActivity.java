@@ -5,7 +5,6 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
-import android.widget.Toast;
 
 import com.example.android_app_remote_joystick.R;
 import com.example.android_app_remote_joystick.databinding.ActivityMainBinding;
@@ -35,9 +34,6 @@ public class MainActivity extends AppCompatActivity implements Joystick.Joystick
                     viewModel.setIp(strIP);
                     viewModel.setPort(strPort);
 
-                } else {
-                    Toast.makeText(getApplicationContext(), "IP or Port is missing",
-                            Toast.LENGTH_SHORT).show();
                 }
             }
         });
